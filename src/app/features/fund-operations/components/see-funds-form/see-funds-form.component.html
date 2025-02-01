@@ -7,7 +7,7 @@
     <div class="form-section-one">
       <label for="phone">{{ phoneField.label }}*</label>
 
-      <br />
+      <!-- <br /> -->
 
       <input
         [formControlName]="phoneField.name"
@@ -18,18 +18,20 @@
       />
     </div>
 
-    <br />
+    <!-- <br /> -->
 
     <div class="form-section-two">
       <button type="submit" [disabled]="formGroupRecarga.invalid">
         <span><i class="fa-brands fa-bitcoin"></i></span> Ver fondos
       </button>
+      <div
+        class="errors-message-container"
+        *ngIf="formGroupRecarga.get('phoneControl')?.errors?.['required']"
+      >
+        ⚠ El número de celular es obligatorio.
+      </div>
     </div>
   </form>
 
-  <br />
-
-  <div *ngIf="formGroupRecarga.get('phoneControl')?.errors?.['required']">
-    ⚠ El número de celular es obligatorio.
-  </div>
+  <!-- <br /> -->
 </div>

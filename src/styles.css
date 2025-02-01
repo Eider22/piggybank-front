@@ -6,8 +6,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f6f9;
   color: #333;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   max-height: 100vh;
 }
