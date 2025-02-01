@@ -3,8 +3,11 @@
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 85%;
+  max-width: 85vw;
+  height: 40vh;
   margin: 10vh auto 0;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -22,7 +25,16 @@ form {
 .form-section-one {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+.form-section-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 90px;
+  /* border: #2c3e50 solid 1px; */
+  padding-bottom: 10px;
 }
 
 .form-section-one label {
@@ -30,10 +42,11 @@ form {
   margin-bottom: 5px;
   font-weight: bold;
   color: #34495e;
-  text-align: center
+  text-align: center;
 }
 
 input {
+  margin-top: 10px;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #decead;
@@ -77,16 +90,27 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: 12vh;
   max-width: 50%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   animation: bounce 2s infinite;
 }
 
 .svg-container img {
-  max-width: 35%;
+  max-width: 45%;
   height: auto;
   margin-bottom: 0;
+}
+
+.errors-message-container {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(216, 64, 64);
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 @keyframes bounce {
@@ -107,6 +131,11 @@ button:disabled {
 
 /* Desktop Adjustments */
 @media (min-width: 768px) {
+  .container {
+    margin-top: 5vh;
+    min-height: 50vh;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
@@ -118,6 +147,10 @@ button:disabled {
 
   svg {
     max-width: 100%;
+  }
+
+  .svg-container img {
+    max-width: 20%;
   }
 
 }
