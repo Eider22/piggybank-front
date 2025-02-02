@@ -4,6 +4,8 @@ import { catchError, map, Observable } from 'rxjs';
 import { ResponseDto } from '../../../../shared/models/dtos/response.dto';
 import { environment } from '../../../../environments/environment.local';
 import { BadRequest } from '../../../../shared/errors/bad-request.error';
+import { DoTopUpDto } from '../../models/dtos/do-to-up.dto';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +13,55 @@ import { BadRequest } from '../../../../shared/errors/bad-request.error';
 export class RequestService {
   private apiUrl = `${environment.apiUrl}funds/`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getFunds(phone: string): Observable<number> {
     return this.http
       .get<ResponseDto<number>>(
         `${this.apiUrl}get-account-funds?phone=${phone}`
+      )
+      .pipe(
+        map((response) => {
+          if (response.statusCode === 200) {
+            return response.data;
+          }
+          if (response.statusCode === 400) {
+            throw new BadRequest(response.message);
+          }
+          throw new Error('Error desconocido');
+        }),
+        catchError((error) => {
+          throw error;
+        })
+      );
+  }
+
+  getSatoshis(code: string): Observable<number> {
+    return this.http
+      .get<ResponseDto<number>>(
+        `${this.apiUrl}get-code-sts?code=${code}`
+      )
+      .pipe(
+        map((response) => {
+          if (response.statusCode === 200) {
+            return response.data;
+          }
+          if (response.statusCode === 400) {
+            throw new BadRequest(response.message);
+          }
+          throw new Error('Error desconocido');
+        }),
+        catchError((error) => {
+          throw error;
+        })
+      );
+  }
+
+  doTopUp(topUpData: DoTopUpDto): Observable<number> {
+    return this.http
+      .post<ResponseDto<number>>(
+        `${this.apiUrl}do-top-up`,
+        topUpData
       )
       .pipe(
         map((response) => {
