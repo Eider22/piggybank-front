@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BadRequest } from '../../errors/bad-request.error';
 import { AlertService } from '../alert/alert.service';
+import { SweetAlertResult } from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class ErrorHandlerService {
 
   }
 
-  handleError(error: Error): void {
+  async handleError(error: Error): Promise<void> {
     if (error instanceof BadRequest) {
-      this.alertService.warning(error.message);
+      await this.alertService.warning(error.message);
       return;
     }
-    this.alertService.unknownError();
+    await this.alertService.unknownError();
   }
 }

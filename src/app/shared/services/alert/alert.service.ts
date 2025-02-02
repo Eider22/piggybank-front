@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertResult } from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -17,19 +17,19 @@ export class AlertService {
     });
   }
 
-  unknownError() {
-    Swal.fire({
-      title: "Error",
-      text: "Error desconocido, por favor contacte al administrador",
+  async unknownError(): Promise<SweetAlertResult<void>> {
+    return Swal.fire({
+      title: 'Error',
+      text: 'Error desconocido, por favor contacte al administrador',
       icon: 'error',
       confirmButtonText: 'Aceptar',
       confirmButtonColor: '#b3831d',
     });
   }
 
-  warning(message: string, title: string = 'Atención') {
-    Swal.fire({
-      title,
+  async warning(message: string):  Promise<SweetAlertResult<void>> {
+    return Swal.fire({
+      title: 'Advertencia',
       text: message,
       icon: 'warning',
       confirmButtonText: 'Aceptar',
