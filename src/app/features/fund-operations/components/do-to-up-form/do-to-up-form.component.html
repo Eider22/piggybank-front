@@ -3,12 +3,11 @@
   <div class="svg-container">
     <img class="" src="svgs/bitcoin-piggy-bank.svg" alt="piggy-bank" />
   </div>
+  <h1 style=" grid-row: 2; width: 100%;"><i class="fa-brands fa-bitcoin bitcoin-icon"></i> {{amount}} satoshis </h1>
 
   <form [formGroup]="formGroupRecarga" (ngSubmit)="onSubmit()">
     <div class="form-section-one">
-      <label for="phone">{{ phoneField.label }}*</label>
-
-      <!-- <br /> -->
+      <label for="phone">{{ phoneField.label }}</label>
 
       <input
         [formControlName]="phoneField.name"
@@ -19,11 +18,9 @@
       />
     </div>
 
-    <!-- <br /> -->
-
     <div class="form-section-two">
       <button type="submit" [disabled]="formGroupRecarga.invalid">
-        <span><i class="fa-brands fa-bitcoin"></i></span> Ver fondos
+        <span><i class="fa-brands fa-bitcoin"></i></span> Recargar
       </button>
       <div
         class="errors-message-container"
@@ -33,6 +30,4 @@
       </div>
     </div>
   </form>
-
-  <!-- <br /> -->
 </div>

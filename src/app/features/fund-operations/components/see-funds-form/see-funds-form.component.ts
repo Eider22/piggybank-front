@@ -12,6 +12,7 @@ import { FormField } from './form-field.model';
 import { lastValueFrom } from 'rxjs';
 import { BadRequest } from '../../../../shared/errors/bad-request.error';
 import { ErrorHandlerService } from '../../../../shared/services/handlers/error-handler.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-see-funds-form',
@@ -35,7 +36,8 @@ export class SeeFundsFormComponent {
     private formBuilder: FormBuilder,
     private requestService: RequestService,
     private alertService: AlertService,
-    private errorHandler: ErrorHandlerService
+    private errorHandler: ErrorHandlerService,
+    private router: Router
   ) {
     this.formGroupRecarga = this.formBuilder.group({
       phoneControl: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
@@ -71,5 +73,9 @@ export class SeeFundsFormComponent {
     } catch (error) {
       this.errorHandler.handleError(error as Error);
     }
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 }

@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SeeFundsComponent } from './features/fund-operations/pages/see-funds/see-funds.component';
-import { DoTopUpComponent } from './features/fund-operations/pages/do-top-up/do-top-up.component';
+import { HomeComponent } from './features/home/pages/home/home.component';
 
 const routes: Routes = [
-  {path:'funds/see-funds', component: SeeFundsComponent},
-  {path:'funds/do-to-up', component: DoTopUpComponent},
+  { path: '', component: HomeComponent },
+  {
+    path: 'funds',
+    loadChildren: () =>
+      import('./features/fund-operations/fund-operations.module').then(
+        (m) => m.FundOperationsModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
