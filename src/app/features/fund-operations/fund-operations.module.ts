@@ -7,13 +7,15 @@ import { SeeFundsFormComponent } from './components/see-funds-form/see-funds-for
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { DoTopUpComponent } from './pages/do-top-up/do-top-up.component';
+import { DoToUpFormComponent } from './components/do-to-up-form/do-to-up-form.component';
 
 
 @NgModule({
   declarations: [
     SeeFundsComponent,
     SeeFundsFormComponent,
-    DoTopUpComponent
+    DoTopUpComponent,
+    DoToUpFormComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { DoTopUpComponent } from './pages/do-top-up/do-top-up.component';
     SharedModule
   ],
   exports: [
-    SeeFundsComponent
+    SeeFundsComponent,
+    DoTopUpComponent
   ]
 })
 export class FundOperationsModule { }

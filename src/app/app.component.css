@@ -1,4 +1,24 @@
 .main-container {
   width: 90vw;
   margin: auto;
+  margin-top: 2vh;
+  padding-bottom: 2vh;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.main-container::-webkit-scrollbar {
+  display: none;
+}
+
+.main-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    width: 70vw;
+    max-height: 70vh;
+  }
+
 }
