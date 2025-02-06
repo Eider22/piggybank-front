@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -20,8 +20,9 @@ import { DoTopUpDto } from '../../models/dtos/do-to-up.dto';
   templateUrl: './do-to-up-form.component.html',
   styleUrl: './do-to-up-form.component.css',
 })
-export class DoToUpFormComponent {
-  code: string | null = '';
+export class DoToUpFormComponent implements OnInit, OnChanges {
+  @Input() code: string | null = '';
+
   amount: number = 0;
   formGroupRecarga: FormGroup;
   phoneField: FormField = {
@@ -53,14 +54,21 @@ export class DoToUpFormComponent {
   }
 
   ngOnInit(): void {
-    this.getSatoshisByCode();
     this.loadCode();
+    this.getSatoshisByCode();
     this.updateNewFormGroup();
+  }
+
+  ngOnChanges() {
+    if (this.code) {
+      this.updateNewFormGroup();
+      this.getSatoshisByCode();
+    }
   }
 
   updateNewFormGroup() {
     this.formGroupRecarga = this.formBuilder.group({
-      phoneControl: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]], // Validación de 10 dígitos
+      phoneControl: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       codeControl: [
         this.code,
         [
@@ -74,25 +82,8 @@ export class DoToUpFormComponent {
   loadCode() {
     const urlParams = new URLSearchParams(window.location.search);
     this.code = urlParams.get('code');
-    this.getSatoshisByCode();
   }
 
-  getPhoneControl(): AbstractControl | null {
-    return this.formGroupRecarga.get('phoneControl');
-  }
-  getcodeControl(): AbstractControl | null {
-    return this.formGroupRecarga.get('codeControl'); // Retorna el valor o una cadena vacía
-  }
-  getPhoneControlValue(): string {
-    return this.formGroupRecarga.get('phoneControl')?.value || '';
-  }
-  getcodeControlValue(): string {
-    return this.formGroupRecarga.get('codeControl')?.value || ''; // Retorna el valor o una cadena vacía
-  }
-
-  /**
-   * Método que se ejecuta al enviar el formulario
-   */
   async onSubmit() {
     const confirm = await this.alertService.confirm(
       '¿Estás seguro de realizar la recarga?'
@@ -110,7 +101,11 @@ export class DoToUpFormComponent {
         this.requestService.doTopUp(doTopUpData)
       );
 
-      this.alertService.success(`Tus fondos actuales son: ${funds} satoshis`);
+      await this.alertService.success(
+        `Tus fondos actuales son: ${funds} satoshis`
+      );
+
+      this.router.navigate(['']);
     } catch (error) {
       this.errorHandler.handleError(error as Error);
       this.router.navigate(['']);
@@ -138,5 +133,18 @@ export class DoToUpFormComponent {
 
   goHome() {
     this.router.navigate(['/']);
+  }
+
+  getPhoneControl(): AbstractControl | null {
+    return this.formGroupRecarga.get('phoneControl');
+  }
+  getcodeControl(): AbstractControl | null {
+    return this.formGroupRecarga.get('codeControl');
+  }
+  getPhoneControlValue(): string {
+    return this.formGroupRecarga.get('phoneControl')?.value || '';
+  }
+  getcodeControlValue(): string {
+    return this.formGroupRecarga.get('codeControl')?.value || '';
   }
 }

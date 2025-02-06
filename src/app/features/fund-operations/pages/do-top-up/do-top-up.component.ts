@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './do-top-up.component.html',
   styleUrl: './do-top-up.component.css',
 })
-export class DoTopUpComponent {}
+export class DoTopUpComponent {
+  code: string | null = null;
+
+  onCodeResult(result: string | null): void {
+    this.code = result;  }
+}

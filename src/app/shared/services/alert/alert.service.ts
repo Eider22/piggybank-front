@@ -7,8 +7,8 @@ import Swal, { SweetAlertResult } from 'sweetalert2';
 export class AlertService {
   constructor() {}
 
-  success(message: string, title: string = 'Éxito') {
-    Swal.fire({
+  async success(message: string, title: string = 'Éxito'): Promise<SweetAlertResult<void>> {
+    return Swal.fire({
       title,
       text: message,
       icon: 'success',
@@ -29,7 +29,7 @@ export class AlertService {
 
   async warning(message: string):  Promise<SweetAlertResult<void>> {
     return Swal.fire({
-      title: 'Advertencia',
+      title: 'Atención',
       text: message,
       icon: 'warning',
       confirmButtonText: 'Aceptar',
