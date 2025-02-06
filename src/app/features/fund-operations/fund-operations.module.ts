@@ -10,6 +10,7 @@ import { DoTopUpComponent } from './pages/do-top-up/do-top-up.component';
 import { DoToUpFormComponent } from './components/do-to-up-form/do-to-up-form.component';
 import { QrScannerComponent } from './components/qr-scanner/qr-scanner.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { WithdrawalComponent } from './pages/withdrawal/withdrawal.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     SeeFundsFormComponent,
     DoTopUpComponent,
     DoToUpFormComponent,
-    QrScannerComponent
+    QrScannerComponent,
+    WithdrawalComponent
   ],
   imports: [
     CommonModule,

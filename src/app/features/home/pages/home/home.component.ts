@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-
   constructor(private route: Router) {}
 
   onRecargar(): void {
@@ -18,5 +17,7 @@ export class HomeComponent {
   onVerFondos(): void {
     this.route.navigate(['/funds/see-funds']);
   }
-  onRetirar(): void {}
+  onRetirar(): void {
+    this.route.navigate(['/funds/do-withdrawal']);
+  }
 }
