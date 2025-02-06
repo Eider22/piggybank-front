@@ -1,9 +1,13 @@
 <div class="container">
-  <div class="back-button" (click)="goHome()"><i class="fa-solid fa-arrow-left"></i></div>
+  <div class="back-button" (click)="goHome()">
+    <i class="fa-solid fa-arrow-left"></i>
+  </div>
   <div class="svg-container">
     <img class="" src="svgs/bitcoin-piggy-bank.svg" alt="piggy-bank" />
   </div>
-  <h1 style=" grid-row: 2; width: 100%;"><i class="fa-brands fa-bitcoin bitcoin-icon"></i> {{amount}} satoshis </h1>
+  <h1 style="grid-row: 2; width: 100%">
+    <i class="fa-brands fa-bitcoin bitcoin-icon"></i> {{ amount }} satoshis
+  </h1>
 
   <form [formGroup]="formGroupRecarga" (ngSubmit)="onSubmit()">
     <div class="form-section-one">
@@ -14,7 +18,7 @@
         [type]="phoneField.type"
         [id]="phoneField.id"
         [placeholder]="phoneField.placeholder"
-        [required]="phoneField.placeholder || false"
+        [required]="phoneField.required || false"
       />
     </div>
 

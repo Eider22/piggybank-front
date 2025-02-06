@@ -1,1 +1,2 @@
-<app-do-to-up-form></app-do-to-up-form>
+<app-qr-scanner *ngIf="!code" (onCodeResult)="onCodeResult($event)"></app-qr-scanner>
+<app-do-to-up-form [code]="code" [ngStyle]="{'display': code ? 'block' : 'none'}"></app-do-to-up-form>

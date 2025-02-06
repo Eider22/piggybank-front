@@ -75,7 +75,12 @@
               "buildTarget": "piggybank-front:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "allowedHosts": [
+              "100c-2800-e2-2e80-487-a17b-9952-d628-4c01.ngrok-free.app"
+            ]
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
