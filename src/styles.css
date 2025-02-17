@@ -1,0 +1,122 @@
+:root {
+  /* Paleta de colores */
+  --footer-bg: rgba(179, 131, 29, 0.98);
+  --footer-text: #ecf0f1;
+  --footer-arrow-bg: #b3831d;
+  --footer-arrow-bg-alt: #d3ae5e;
+}
+
+:root {
+  --footer-bg: rgba(1, 50, 32, 1);   /* Verde bosque oscuro */
+  --footer-text: #f0e5d8;               /* Crema suave para el texto */
+  --footer-arrow-bg: #a3b18a;           /* Verde oliva suave para acentos */
+  --footer-arrow-bg-alt: #8e9a73;       /* Verde oliva un poco más oscuro */
+}
+
+:root {
+  --footer-bg: rgba(10, 38, 71, 1);  /* Azul marino profundo */
+  --footer-text: #ecf0f1;               /* Texto claro */
+  --footer-arrow-bg: #d4af37;           /* Oro brillante */
+  --footer-arrow-bg-alt: #c49e2b;       /* Oro un poco más oscuro */
+}
+
+
+
+:root {
+  --footer-bg: rgba(80, 0, 24, 0.95);   /* Vino intenso */
+  --footer-text: #f8f1e4;               /* Marfil suave para el texto */
+  --footer-arrow-bg: #b08d57;           /* Acabado dorado para acentos */
+  --footer-arrow-bg-alt: #a67c52;       /* Tonos dorados un poco más oscuros */
+}
+
+
+:root {
+  --footer-bg: rgba(20, 20, 20, 1);  /* Negro elegante */
+  --footer-text: #e0e0e0;               /* Plata claro para el texto */
+  --footer-arrow-bg: #c0c0c0;           /* Plata para acentos */
+  --footer-arrow-bg-alt: #a9a9a9;       /* Plata oscura para estados alternativos */
+}
+
+:root {
+  --footer-bg: rgb(209, 208, 208);  /* Negro elegante */
+  --footer-bg: rgba(135, 114, 68, 0.98);  /* Negro elegante */
+  --footer-text: rgb(115, 115, 115);               /* Plata claro para el texto */
+  --footer-text: rgba(255, 255, 255, 0.986);               /* Plata claro para el texto */
+  --footer-company-name: rgba(135, 114, 68, 0.98);               /* Plata claro para el texto */
+  --footer-company-name: rgb(255, 255, 255);               /* Plata claro para el texto */
+  --footer-arrow-bg: rgba(211, 202, 184, 0.98);          /* Plata para acentos */
+  --footer-arrow-bg: rgba(129, 127, 125, 0.98);       /* Plata para acentos */
+  --footer-arrow-bg-alt: rgba(135, 114, 68, 0.98);   /* Plata oscura para estados alternativos */
+  --footer-arrow-bg-alt: rgba(129, 127, 125, 0.98);       /* Plata oscura para estados alternativos */
+  --icon: rgba(135, 114, 68, 0.98);   /* Plata oscura para estados alternativos */
+  --white: rgb(209, 208, 208);   /* Plata oscura para estados alternativos */
+}
+
+:root {
+  --footer-bg: rgb(209, 208, 208);  /* Negro elegante */
+  --footer-text: rgb(115, 115, 115);               /* Plata claro para el texto */
+  --footer-text: rgba(255, 255, 255, 0.986);               /* Plata claro para el texto */
+  --footer-company-name: rgba(135, 114, 68, 0.98);               /* Plata claro para el texto */
+  --footer-company-name: rgb(255, 255, 255);               /* Plata claro para el texto */
+  --footer-arrow-bg: rgba(211, 202, 184, 0.98);          /* Plata para acentos */
+  --footer-arrow-bg: rgba(129, 127, 125, 0.98);       /* Plata para acentos */
+  --footer-arrow-bg-alt: rgba(135, 114, 68, 0.98);   /* Plata oscura para estados alternativos */
+  --footer-arrow-bg-alt: rgba(129, 127, 125, 0.98);       /* Plata oscura para estados alternativos */
+  --icon: rgba(135, 114, 68, 0.98);   /* Plata oscura para estados alternativos */
+  --white: rgb(209, 208, 208);   /* Plata oscura para estados alternativos */
+}
+
+:root {
+  --footer-bg: rgba(34, 34, 34, 1);  /* Gris carbón sofisticado */
+  --footer-text: #f5f5f5;               /* Texto muy claro */
+  --footer-arrow-bg: #b76e79;           /* Rosa oro para acentos */
+  --footer-arrow-bg-alt: #a45d66;       /* Rosa oro oscuro */
+}
+
+
+
+
+
+
+
+
+:root {
+  --footer-bg: rgba(1, 50, 32, 1);  /* Verde bosque oscuro */
+  --footer-text: #f0e5d8;              /* Crema suave para el texto */
+  --footer-arrow-bg: #a3b18a;          /* Verde oliva suave para los acentos */
+  --footer-arrow-bg-alt: #8e9a73;      /* Verde oliva un poco más oscuro para estados alternativos */
+  --icon: rgba(1, 50, 32, 1);  /* Plata oscura para estados alternativos */
+}
+
+
+:root {
+  --footer-bg: rgba(53, 187, 138, 0.98);  /* Verde bosque oscuro */
+  --footer-bg: rgba(99, 190, 120, 0.98);  /* Verde bosque oscuro */
+  --footer-text: #f0e5d8;              /* Crema suave para el texto */
+  --footer-arrow-bg: rgba(99, 190, 120, 0.98);       /* Verde oliva suave para los acentos */
+  --footer-arrow-bg-alt: rgba(18, 135, 92, 0.98);   /* Verde oliva un poco más oscuro para estados alternativos */
+  --icon: rgba(53, 187, 138, 0.98);  /* Plata oscura para estados alternativos */
+  --button-succes: rgba(53, 187, 138, 0.98);  /* Plata oscura para estados alternativos */
+  --button-succes-hover: rgba(45, 163, 120, 0.98);  /* Plata oscura para estados alternativos */
+}
+
+
+
+
+
+
+
+
+/* You can add global styles to this file, and also import other style files */
+/* General Styles - Mobile First */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  max-height: 100vh;
+}

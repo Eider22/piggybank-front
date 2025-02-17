@@ -1,0 +1,10 @@
+<div class="back-button" (click)="goHome()"><i class="fa-solid fa-house"></i></div>
+
+<div class="scanner-container">
+  <zxing-scanner class="scanner"
+  [autostart]="true"
+  [tryHarder]="true"
+  (scanSuccess)="scanCode($event)"
+  playsinline>
+  </zxing-scanner>
+</div>

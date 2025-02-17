@@ -1,0 +1,173 @@
+.container {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 85vw;
+  margin: 0 auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section-one {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-section-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 90px;
+  /* border: #2c3e50 solid 1px; */
+  padding-bottom: 10px;
+}
+
+.form-section-one label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495e;
+  text-align: center;
+}
+
+input {
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #decead;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: #b3831d;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--button-succes);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-succes-hover);
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  color: #ecf0f1;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.bitcoin-icon {
+  color: #b3831d;
+}
+
+.svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12vh;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  animation: bounce 2s infinite;
+}
+
+.svg-container img {
+  max-width: 45%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.errors-message-container {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(216, 64, 64);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.back-button {
+  padding: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #ccd0d3;
+  border-radius: 50%;
+}
+
+.back-button:hover {
+  background-color: #ccd0d3;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Desktop Adjustments */
+@media (min-width: 768px) {
+  .container {
+    max-height: 62vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .svg-container {
+    height: 30vh;
+    max-width: 90%;
+  }
+
+  svg {
+    max-width: 100%;
+  }
+
+  .svg-container img {
+    max-width: 20%;
+  }
+
+}

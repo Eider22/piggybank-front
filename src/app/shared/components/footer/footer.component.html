@@ -1,0 +1,30 @@
+<footer class="footer" [class.footer--expanded]="isImageExpanded">
+  <button class="footer__arrow" [class.footer__arrow-top]="isImageExpanded" (click)="expandImage()">
+    <!-- <i class="fa-solid fa-arrow-up"></i> -->
+    <i class="fa-solid fa-angles-up"></i>
+  </button>
+  <div class="footer__content">
+    <section class="footer__images-container">
+      <figure *ngFor="let member of footerData.members" class="footer__member-figure">
+        <img [src]="member.img" [alt]="'Foto de ' + member.name" class="footer__member-img"
+          [class.footer__member-img--expanded]="isImageExpanded" />
+        <figcaption class="footer__caption">{{ member.name }}</figcaption>
+      </figure>
+    </section>
+    <section class="footer__company-info">
+      <p class="footer__company-name" [class.footer__company-name--expanded]="isImageExpanded">
+        {{ footerData.company.name }}
+      </p>
+      <div class="footer__details" [class.footer__details--expanded]="isImageExpanded">
+        <p class="footer__contact" [class.footer__contact--expanded]="isImageExpanded">
+          | Tel: {{ footerData.company.contact.phone }}
+          <br>
+          | Email: {{ footerData.company.contact.email }}
+        </p>
+        <p class="footer__description" [class.footer__description--expanded]="isImageExpanded">
+          {{ footerData.companyDescription }}
+        </p>
+      </div>
+    </section>
+  </div>
+</footer>
