@@ -8,9 +8,8 @@ describe('DoToUpFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DoToUpFormComponent]
-    })
-    .compileComponents();
+      declarations: [DoToUpFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DoToUpFormComponent);
     component = fixture.componentInstance;
