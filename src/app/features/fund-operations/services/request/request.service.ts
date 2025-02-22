@@ -11,14 +11,15 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class RequestService {
-  private apiUrl = `${environment.apiUrl}funds/`;
+  private apiTopUpUrl = `${environment.apiUrl}top-up/`;
+  private apiAccountsUrl = `${environment.apiUrl}accounts/`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   getFunds(phone: string): Observable<number> {
     return this.http
       .get<ResponseDto<number>>(
-        `${this.apiUrl}get-account-funds?phone=${phone}`
+        `${this.apiAccountsUrl}get-account-funds?phone=${phone}`
       )
       .pipe(
         map((response) => {
@@ -39,7 +40,7 @@ export class RequestService {
   getSatoshis(code: string): Observable<number> {
     return this.http
       .get<ResponseDto<number>>(
-        `${this.apiUrl}get-code-sts?code=${code}`
+        `${this.apiTopUpUrl}get-code-sts?code=${code}`
       )
       .pipe(
         map((response) => {
@@ -60,7 +61,7 @@ export class RequestService {
   doTopUp(topUpData: DoTopUpDto): Observable<number> {
     return this.http
       .post<ResponseDto<number>>(
-        `${this.apiUrl}do-top-up`,
+        `${this.apiTopUpUrl}do-top-up`,
         topUpData
       )
       .pipe(
