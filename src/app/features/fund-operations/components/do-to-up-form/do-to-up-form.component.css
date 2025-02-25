@@ -125,6 +125,7 @@ button:disabled {
   justify-content: center;
   border: solid 1px #ccd0d3;
   border-radius: 50%;
+  color: var(--icon);
 }
 
 .back-button:hover {
